@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { fetchCourses } from '../actions';
+import CoursesList from '../components/CoursesList';
 
 
 export class CoursesPage extends Component {
@@ -15,7 +16,9 @@ export class CoursesPage extends Component {
     return (
       <React.Fragment>
         <Switch>
-          
+          <Route exact path={match.url} render={() => (
+            <CoursesList courses = {courses} />
+          )} />
         </Switch>
       </React.Fragment>
     )
