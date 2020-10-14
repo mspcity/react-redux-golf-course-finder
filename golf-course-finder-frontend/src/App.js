@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Home from './components/Home';
 import CoursesPage from './containers/CoursesPage';
 import './App.css';
 
@@ -9,6 +10,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <Switch>
+              <Route exact path='/' component={Home} />
               <Route exact path='/courses' component={CoursesPage} />
           </Switch>
         </header>
