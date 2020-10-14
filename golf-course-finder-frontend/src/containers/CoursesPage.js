@@ -19,6 +19,7 @@ export class CoursesPage extends Component {
           <Route exact path={match.url} render={() => (
             <CoursesList courses = {courses} />
           )} />
+          <Route path={`${match.url}/:courseId`} component={CourseShow} />
         </Switch>
       </React.Fragment>
     )
