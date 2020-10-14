@@ -11,11 +11,13 @@ export class CoursesPage extends Component {
   }
 
   render() {
-    
+    const { courses, match } = this.props
     return (
-      <div>
-        
-      </div>
+      <React.Fragment>
+        <Switch>
+          
+        </Switch>
+      </React.Fragment>
     )
   }
 }
