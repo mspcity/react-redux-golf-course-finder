@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { fetchCourses } from '../actions';
 import CoursesList from '../components/CoursesList';
+import CourseShow from './CourseShow';
 
 
 export class CoursesPage extends Component {
