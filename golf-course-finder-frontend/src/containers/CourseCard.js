@@ -9,12 +9,13 @@ export class CourseCard extends Component {
     return (
       <div className="course-card">
         <div className="photo-box">
+          <h4 className="course-header"><Link key={course.id} to={`/courses/${course.id}`}>{course.club_name}</Link></h4>
           <img src={course.image} width="150" height="125" alt="pic" />
           <br></br>
 
-        <span className="bold-text"></span>{course.club_name}
-        <br></br>
         <span className="bold-text"></span>{course.club_type}
+        <br></br>
+        <span className="bold-text"></span>{course.city}, {course.state}
         <br></br>
 
           <ButtonGroup>
