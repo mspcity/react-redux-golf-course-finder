@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_10_14_001540) do
     t.string "club_name"
     t.integer "number_of_holes"
     t.integer "course_length"
-    t.string "type"
+    t.string "club_type"
     t.string "address"
     t.string "city"
     t.string "state"
