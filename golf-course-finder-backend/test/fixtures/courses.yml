@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  club_name: MyString
+  number_of_holes: 1
+  course_length: 1
+  type: 
+  address: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  phone: MyString
+  website: MyString
+  image: MyString
+  likes: 1
+
+two:
+  club_name: MyString
+  number_of_holes: 1
+  course_length: 1
+  type: 
+  address: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  phone: MyString
+  website: MyString
+  image: MyString
+  likes: 1
