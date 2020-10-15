@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './components/Home';
+import CourseNew from './containers/CourseNew';
 import CoursesPage from './containers/CoursesPage';
 import CourseShow from './containers/CourseShow';
 import NavBar from './components/NavBar';
@@ -14,6 +15,7 @@ function App() {
           <NavBar />
           <Switch>
               <Route exact path='/' component={Home} />
+              <Route exact path='/courses/new' component={CourseNew} />
               <Route exact path='/courses' component={CoursesPage} />
               <Route path='/courses/:courseId' component={CourseShow} />
           </Switch>

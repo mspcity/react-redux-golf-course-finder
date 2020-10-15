@@ -43,10 +43,10 @@ const addCourse = course => {
 
 export const createCourse = (course) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/courses`, {
+    return fetch('http://localhost:3001/courses', {
       method: "POST",
       headers: {
-        'Accept': 'application/json',
+
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({course: course})
@@ -55,5 +55,6 @@ export const createCourse = (course) => {
     .then(course => {
       dispatch(addCourse(course))
     })
+    
   }
 }

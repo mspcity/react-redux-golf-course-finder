@@ -13,14 +13,18 @@ class CoursesController < ApplicationController
     render json: @course
   end
 
+  def new
+    @course = Course.new
+  end
+
   # POST /courses
   def create
     @course = Course.new(course_params)
 
     if @course.save
-      render json: @course, status: :created, location: @course
-    else
-      render json: @course.errors, status: :unprocessable_entity
+      render json: @course 
+    # else
+    #   render json: @course.errors, status: :unprocessable_entity
     end
   end
 
@@ -28,8 +32,8 @@ class CoursesController < ApplicationController
   def update
     if @course.update(course_params)
       render json: @course
-    else
-      render json: @course.errors, status: :unprocessable_entity
+    # else
+    #   render json: @course.errors, status: :unprocessable_entity
     end
   end
 
