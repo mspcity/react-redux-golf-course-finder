@@ -10,7 +10,7 @@ export class CourseCard extends Component {
       <div className="course-card">
         <div className="photo-box">
           <h4 className="course-header"><Link key={course.id} to={`/courses/${course.id}`}>{course.club_name}</Link></h4>
-          <img src={course.image} width="150" height="125" alt="pic" />
+          <img src={course.image} width="200" height="175" alt="pic" />
           <br></br>
 
         <span className="bold-text"></span>{course.club_type}

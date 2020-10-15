@@ -50,10 +50,12 @@ export class CoursesList extends Component {
     const isSorted = this.state.sorted
     return (
       <React.Fragment>
-        <TypeFilter handleChange={this.handleFilterChange} />
-        <button className="btn-sm" onClick={this.handleClick}></button>
-        <div className="course-card-container">
-          { isSorted === false ? this.renderCourses(this.courseFilter()) : this.renderCourses(this.courseSort())}
+        <div className="courses-index">
+          <TypeFilter handleChange={this.handleFilterChange} />
+          <button className="btn-sm" onClick={this.handleClick}></button>
+          <div className="course-card-container">
+            { isSorted === false ? this.renderCourses(this.courseFilter()) : this.renderCourses(this.courseSort())}
+          </div>
         </div>
       </React.Fragment>
       
