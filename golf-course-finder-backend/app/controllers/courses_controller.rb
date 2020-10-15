@@ -23,8 +23,8 @@ class CoursesController < ApplicationController
 
     if @course.save
       render json: @course 
-    # else
-    #   render json: @course.errors, status: :unprocessable_entity
+    else
+      render json: @course.errors, status: :unprocessable_entity
     end
   end
 
@@ -50,6 +50,6 @@ class CoursesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def course_params
-      params.require(:course).permit(:club_name, :number_of_holes, :course_length, :type, :address, :city, :state, :zip_code, :phone, :website, :image, :likes)
+      params.require(:course).permit(:club_name, :club_type, :number_of_holes, :course_length, :type, :address, :city, :state, :zip_code, :phone, :website, :image, :likes)
     end
 end
