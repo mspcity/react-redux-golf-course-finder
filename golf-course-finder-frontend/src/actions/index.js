@@ -1,3 +1,5 @@
+// Courses index
+
 const setCourses = courses => {
   return {
     type: 'FETCH_COURSES',
@@ -14,6 +16,8 @@ export const fetchCourses = () => {
   }
 }
 
+// Course show
+
 const setCourse = course => {
   return {
     type: 'FETCH_COURSE',
@@ -26,5 +30,30 @@ export const fetchCourse = (courseId) => {
     return fetch(`http://localhost:3001/courses/${courseId}`)
     .then(resp => resp.json())
     .then(course => dispatch(setCourse([course])))
+  }
+}
+
+// Course post
+const addCourse = course => {
+  return {
+    type: 'ADD_COURSE',
+    course
+  }
+};
+
+export const createCourse = (course) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/courses`, {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({course: course})
+    })
+    .then(resp => resp.json())
+    .then(course => {
+      dispatch(addCourse(course))
+    })
   }
 }

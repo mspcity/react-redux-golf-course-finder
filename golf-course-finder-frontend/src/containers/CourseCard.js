@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { ButtonGroup } from 'react-bootstrap';
 import { Button } from 'react-bootstrap'
+// import { likeCourse } from '../actions';
 
 export class CourseCard extends Component {
   render() {
