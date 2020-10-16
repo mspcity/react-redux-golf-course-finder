@@ -87,6 +87,14 @@ const setComment = comments => {
   }
 }
 
+export const fetchComments = (courseId) => {
+  return dispatch => {
+    dispatch({type: 'LOADING_COMMENTS'});
+    return fetch(`http://localhost:3001/courses/${courseId}/comments`)
+    .then(resp => resp.json())
+    .then(comments => dispatch(setComment(comments)))
+  }
+}
 
 //Comment Post
 
