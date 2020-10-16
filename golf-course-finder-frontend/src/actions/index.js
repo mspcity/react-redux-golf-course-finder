@@ -61,5 +61,21 @@ export const createCourse = (course) => {
 
 //Course Delete
 const removeCourse = course => {
-  
+  return {
+    type: 'REMOVE_COURSE',
+    course
+  }
+};
+
+export const deleteCourse = (courseId, routerHistory) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/courses/${courseId}`, {
+      method: 'DELETE',
+    })
+    .then(resp => {
+      dispatch(removeCourse(courseId))
+      routerHistory.replace('/courses')
+    })
+  }
 }
+

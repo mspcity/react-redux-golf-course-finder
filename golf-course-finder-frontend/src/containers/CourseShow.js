@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { fetchCourse } from '../actions';
+import { deleteCourse } from '../actions';
 
 export class CourseShow extends Component {
 
@@ -9,7 +11,7 @@ export class CourseShow extends Component {
     
   }
   render() {
-    const { course } = this.props;
+    const { course, deleteCourse, history } = this.props;
     return (
       <div className="course-show">
         <div className="container-fluid">
@@ -20,9 +22,9 @@ export class CourseShow extends Component {
               <span className="bold-text"></span>{course.number_of_holes} holes
 
             </div>
-
-
         </div>
+
+        <Button className="btn" onClick={() => deleteCourse(course.id, history)}>Delete</Button>
       </div>
     )
   }
@@ -35,4 +37,4 @@ const mapStateToProps = (state, ownProps) => {
   })
 }
 
-export default connect(mapStateToProps, { fetchCourse })(CourseShow)
+export default connect(mapStateToProps, { fetchCourse, deleteCourse })(CourseShow)

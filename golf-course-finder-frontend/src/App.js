@@ -18,6 +18,7 @@ function App() {
               <Route exact path='/courses/new' component={CourseNew} />
               <Route exact path='/courses' component={CoursesPage} />
               <Route path='/courses/:courseId' component={CourseShow} />
+              <Route path='/courses/:courseId' component={CourseShow} />
           </Switch>
         </header>
       </div>
