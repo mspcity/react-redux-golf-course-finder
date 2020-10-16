@@ -55,7 +55,6 @@ export const createCourse = (course) => {
     .then(course => {
       dispatch(addCourse(course))
     })
-    
   }
 }
 
@@ -75,6 +74,42 @@ export const deleteCourse = (courseId, routerHistory) => {
     .then(resp => {
       dispatch(removeCourse(courseId))
       routerHistory.replace('/courses')
+    })
+  }
+}
+
+//Comment loading
+
+const setComment = comments => {
+  return {
+    type: 'FETCH_COMMENTS',
+    comments
+  }
+}
+
+
+//Comment Post
+
+const addComment = comment => {
+  return {
+    type: ADD_COMMENT,
+    comment
+  }
+}
+
+export const createComment = (comment) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/courses/${comment.course_id}/comments`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+        body: JSON.stringify({ comment: comment })
+    })
+    .then(resp => resp.json())
+    .then(comment => {
+      dispatch(addComment(comment))
     })
   }
 }
