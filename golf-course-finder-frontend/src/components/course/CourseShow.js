@@ -5,6 +5,7 @@ import { fetchCourse } from '../../actions'
 import { deleteCourse } from '../../actions'
 import { fetchComments } from '../../actions';
 import CommentsList from '../comment/CommentsList';
+import CommentNew from '../comment/CommentNew';
 
 export class CourseShow extends Component {
 
@@ -32,6 +33,7 @@ export class CourseShow extends Component {
         <div className="bottom-border"></div>
         
         <CommentsList comments={comments} />
+        <CommentNew courseId={this.props.match.params.courseId} />
         
       </div>
     )
@@ -46,4 +48,4 @@ const mapStateToProps = (state, ownProps) => {
   })
 }
 
-export default connect(mapStateToProps, { fetchComments, fetchCourse, deleteCourse })(CourseShow)
+export default connect(mapStateToProps, { fetchComments, fetchCourse, deleteCourse, likeCourse })(CourseShow)
