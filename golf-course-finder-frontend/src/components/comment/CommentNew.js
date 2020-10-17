@@ -13,7 +13,8 @@ export class CommentNew extends Component {
   render() {
     return (
       <div>
-        
+        <p>Add Comment</p>
+          <form></form>
       </div>
     )
   }

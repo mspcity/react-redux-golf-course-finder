@@ -98,29 +98,29 @@ export const fetchComments = (courseId) => {
 
 //Comment Post
 
-// const addComment = comment => {
-//   return {
-//     type: 'ADD_COMMENT',
-//     comment
-//   }
-// }
+const addComment = comment => {
+  return {
+    type: 'ADD_COMMENT',
+    comment
+  }
+}
 
-// export const createComment = (comment) => {
-//   return dispatch => {
-//     return fetch(`http://localhost:3001/courses/${comment.course_id}/comments`, {
-//       method: 'POST',
-//       headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json'
-//       },
-//         body: JSON.stringify({ comment: comment })
-//     })
-//     .then(resp => resp.json())
-//     .then(comment => {
-//       dispatch(addComment(comment))
-//     })
-//   }
-// }
+export const createComment = (comment) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/courses/${comment.course_id}/comments`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+        body: JSON.stringify({ comment: comment })
+    })
+    .then(resp => resp.json())
+    .then(comment => {
+      dispatch(addComment(comment))
+    })
+  }
+}
 
 //Likes Course
 
