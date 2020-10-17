@@ -13,6 +13,7 @@ const CommentsList = ({ comments }) => {
       <ListGroup>
       {renderComments}
       </ListGroup>
+      <br></br>
     </div>
   )
 }

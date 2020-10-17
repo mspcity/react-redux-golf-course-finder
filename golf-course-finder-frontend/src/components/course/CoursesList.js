@@ -34,18 +34,18 @@ export class CoursesList extends Component {
     return filteredList;
   }
 
-  handleClick = () => {
-    this.setState({
-      sorted: true
-    })
-  }
+  // handleClick = () => {
+  //   this.setState({
+  //     sorted: true
+  //   })
+  // }
 
-  courseSort = () => {
-    let sortedList = ""
-    let courses = this.props.courses
-    sortedList = courses.slice().sort((a, b) => b.likes - a.likes);
-    return sortedList
-  }
+  // courseSort = () => {
+  //   let sortedList = ""
+  //   let courses = this.props.courses
+  //   sortedList = courses.slice().sort((a, b) => b.likes - a.likes);
+  //   return sortedList
+  // }
 
   render() {
     const isSorted = this.state.sorted
@@ -53,7 +53,7 @@ export class CoursesList extends Component {
       <React.Fragment>
         <div className="courses-index">
           <TypeFilter handleChange={this.handleFilterChange} />
-          <button className="btn-sm" onClick={this.handleClick}></button>
+          {/* <button className="btn-sm" onClick={this.handleClick}>Sort by Likes</button> */}
           <div className="course-card-container">
             { isSorted === false ? this.renderCourses(this.courseFilter()) : this.renderCourses(this.courseSort())}
           </div>

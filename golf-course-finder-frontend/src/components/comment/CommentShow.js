@@ -1,11 +1,12 @@
 import React from 'react'
+import { ListGroupItem } from 'react-bootstrap';
 
 const CommentShow = ({ comment }) => {
   return (
-    <div className="comment"> 
-        { comment.content }<br></br>
-        <span className="comments-font">
-        <p className="name"> - { comment.name}</p></span>
+    <div>
+      <ListGroupItem>
+        {comment.content} <br></br> <span className="comments-font"> - {comment.name}</span>
+      </ListGroupItem>
     </div>
   )
 }

@@ -13,16 +13,22 @@
   }
 } */
 
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App-header {
+  /* background-image: url(https://www.itl.cat/pngfile/big/209-2090121_stunning-golf-course-wallpaper-indian-wells-golf-resort.jpg); */
+  /* background-image: url(https://s3.amazonaws.com/golfcanada/app/uploads/golfcanada/production/2019/01/23100421/Titleist-ProV1-2019-v2.jpg); */
+  background-image: url(https://www.thegoodsamaritanfuneralhome.com/wp-content/uploads/golfer-picture-2.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 130vh;
+  /* background-color: #9ea19f; */
+  /* min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-} */
+  color: white; */
+}
 
 /* .App-link {
   color: #61dafb;
@@ -68,7 +74,7 @@
   background-image: url("https://thewallpaper.co//wp-content/uploads/2016/10/golf-course-hd-wallpapers-download-4k-tablet-background-wallpapers-colourful-mac-desktop-images-1080p-display-2560x1719.jpg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 110vh;
 }
 
 .home-inner {
@@ -84,9 +90,20 @@
   margin-top: 35px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
-  background-color: white;
+  /* border: 1px solid black; */
+  background-color: white ;
   
+}
+
+/* comment */
+.comments {
+  
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.comments-font {
+  font-style: italic;
+  font-size: 0.9em;
 }
 
 /* navbar */
@@ -113,9 +130,4 @@
 
 .bold-text {
   font-weight: bold;
-}
-
-.comments-font {
-  font-style: italic;
-  font-size: 0.9em;
 }

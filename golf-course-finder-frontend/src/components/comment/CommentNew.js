@@ -31,7 +31,7 @@ export class CommentNew extends Component {
   render() {
     return (
       <div>
-        <p>Add Comment</p>
+        <p className="bold-text">Add Comment</p>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="content">Comment:</label>
             <input type="text" className="form-control" name="content" value={this.state.content} onChange={this.handleChange} />
