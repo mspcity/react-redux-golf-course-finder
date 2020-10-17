@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import { Button } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { fetchCourse } from '../actions';
-import { deleteCourse } from '../actions';
+import { fetchCourse } from '../../actions'
+import { deleteCourse } from '../../actions'
+import { fetchComments } from '../../actions';
+import CommentsList from '../comment/CommentsList';
 
 export class CourseShow extends Component {
 
   componentDidMount() {
     this.props.fetchCourse(this.props.match.params.courseId);
+    this.props.fetchComments(this.props.match.params.courseId);
     
   }
   render() {
-    const { course, deleteCourse, history } = this.props;
+    const { course, deleteCourse, comments, history } = this.props;
     return (
       <div className="course-show">
         <div className="container-fluid">
@@ -25,6 +28,11 @@ export class CourseShow extends Component {
         </div>
 
         <Button className="btn" onClick={() => deleteCourse(course.id, history)}>Delete</Button>
+
+        <div className="bottom-border"></div>
+        
+        <CommentsList comments={comments} />
+        
       </div>
     )
   }
@@ -33,8 +41,9 @@ export class CourseShow extends Component {
 const mapStateToProps = (state, ownProps) => {
   const course = state.courses.find(course => course.id === parseInt(ownProps.match.params.courseId, 10)) || {}
   return({
-    course: course
+    course: course,
+    comments: state.comments
   })
 }
 
-export default connect(mapStateToProps, { fetchCourse, deleteCourse })(CourseShow)
+export default connect(mapStateToProps, { fetchComments, fetchCourse, deleteCourse })(CourseShow)

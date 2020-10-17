@@ -78,7 +78,7 @@ export const deleteCourse = (courseId, routerHistory) => {
   }
 }
 
-//Comment loading
+//Comment index
 
 const setComment = comments => {
   return {
@@ -98,26 +98,53 @@ export const fetchComments = (courseId) => {
 
 //Comment Post
 
-const addComment = comment => {
+// const addComment = comment => {
+//   return {
+//     type: 'ADD_COMMENT',
+//     comment
+//   }
+// }
+
+// export const createComment = (comment) => {
+//   return dispatch => {
+//     return fetch(`http://localhost:3001/courses/${comment.course_id}/comments`, {
+//       method: 'POST',
+//       headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json'
+//       },
+//         body: JSON.stringify({ comment: comment })
+//     })
+//     .then(resp => resp.json())
+//     .then(comment => {
+//       dispatch(addComment(comment))
+//     })
+//   }
+// }
+
+//Likes Course
+
+const addLikes = course => {
   return {
-    type: ADD_COMMENT,
-    comment
+    type: 'LIKE_COURSE',
+    course
   }
 }
 
-export const createComment = (comment) => {
+export const likeCourse = course => {
+  const updatedCourse = Object.assign({...course}, { likes: course.likes + 1})
   return dispatch => {
-    return fetch(`http://localhost:3001/courses/${comment.course_id}/comments`, {
-      method: 'POST',
+    return fetch(`http://localhost:3001/courses/${course.id}`, {
+      method: "PUT",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-        body: JSON.stringify({ comment: comment })
+      body: JSON.stringify({course: updatedCourse})
     })
     .then(resp => resp.json())
-    .then(comment => {
-      dispatch(addComment(comment))
+    .then(course => { 
+      dispatch(addLikes(course)) 
     })
   }
 }

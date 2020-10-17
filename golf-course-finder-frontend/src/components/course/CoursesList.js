@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import TypeFilter from './TypeFilter';
-import CourseCard from '../containers/CourseCard';
+import TypeFilter from '../filter/TypeFilter';
+import CourseCard from './CourseCard';
 
 export class CoursesList extends Component {
 
@@ -24,11 +24,12 @@ export class CoursesList extends Component {
   }
 
   courseFilter = () => {
+    let course_type = this.state.typeFilter
     let filteredList = ""
-    if (this.state.typeFilter === 'All') {
+    if (course_type === 'All') {
       filteredList = this.props.courses
     }else {
-      filteredList = this.props.courses.filter(course => this.state.typeFilter === course.club_type);
+      filteredList = this.props.courses.filter(course => course_type === course.club_type);
     }
     return filteredList;
   }

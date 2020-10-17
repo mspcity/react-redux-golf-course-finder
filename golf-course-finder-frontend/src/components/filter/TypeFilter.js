@@ -9,13 +9,13 @@ const TypeFilter = (props) => {
       <input type="radio" name="typeFilter" id='all' value='All' onChange={props.handleChange} /></span>
       
       <span className="filter-label"><label htmlFor='public'>Public:</label>
-      <input type="radio" name="typeFilter" id='public' value='Public' onChange={props.handleChange} /></span>
+      <input type="radio" name="typeFilter" id='public' value='public' onChange={props.handleChange} /></span>
       
       <span className="filter-label"><label htmlFor='municipal'>Municipal:</label>
-      <input type="radio" name="typeFilter" id='municipal' value='Municipal' onChange={props.handleChange} /></span>
+      <input type="radio" name="typeFilter" id='municipal' value='municipal' onChange={props.handleChange} /></span>
       
       <span className="filter-label"><label htmlFor='private'>Private:</label>
-      <input type="radio" name="typeFilter" id='private' value='Private' onChange={props.handleChange} /></span>
+      <input type="radio" name="typeFilter" id='private' value='private' onChange={props.handleChange} /></span>
       
     
     </div>

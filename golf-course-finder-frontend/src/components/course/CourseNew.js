@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { createCourse } from '../actions';
+import { createCourse } from '../../actions';
 
 export class CourseNew extends Component {
 
@@ -49,9 +49,9 @@ export class CourseNew extends Component {
 
           <label htmlFor="club_type">Club Type:</label>
           <select className="form-control" name="club_type" value={this.state.club_type} onChange={this.handleChange}>
-            <option>Public</option>
-            <option>Municipal</option>
-            <option>Private</option>
+            <option>public</option>
+            <option>municipal</option>
+            <option>private</option>
           </select><br></br>
 
           <label htmlFor="address">Address:</label>

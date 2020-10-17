@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
-import { fetchCourses } from '../actions';
-import CoursesList from '../components/CoursesList';
-import CourseShow from './CourseShow';
+import { fetchCourses } from '../../actions';
+import CoursesList from './CoursesList';
+// import CourseShow from './CourseShow';
 
 
 export class CoursesPage extends Component {
@@ -20,7 +20,7 @@ export class CoursesPage extends Component {
           <Route exact path={match.url} render={() => (
             <CoursesList courses = {courses} />
           )} />
-          <Route path={`${match.url}/:courseId`} component={CourseShow} />
+          {/* <Route path={`${match.url}/:courseId`} component={CourseShow} /> */}
         </Switch>
       </React.Fragment>
     )

@@ -1,12 +1,16 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
-  # before_action :set_course, only: [:index, :create]
+  before_action :set_course, only: [:index, :create]
 
   # GET /comments
   def index
-    @comments = Comment.all
+    if params[:course_id]
+      @comments = @course.comments
+    else
+      @comments = Comment.all
+    end
+    # @comments = Comment.all
     # @comments = @course.comments
-
     render json: @comments
   end
 
@@ -14,6 +18,9 @@ class CommentsController < ApplicationController
   def show
     render json: @comment
   end
+
+  # def new
+  # end
 
   # POST /comments
   def create
@@ -41,13 +48,17 @@ class CommentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
-
-    # Only allow a trusted parameter "white list" through.
-    def comment_params
-      params.require(:comment).permit(:content, :name, :course_id)
+  
+  # Only allow a trusted parameter "white list" through.
+  def comment_params
+    params.require(:comment).permit(:content, :name, :course_id)
+  end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+  
+    def set_course
+      @course = Course.find_by(id: params[:course_id])
     end
 end

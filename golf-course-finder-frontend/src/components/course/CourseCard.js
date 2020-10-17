@@ -2,9 +2,15 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { ButtonGroup } from 'react-bootstrap';
 import { Button } from 'react-bootstrap'
-// import { likeCourse } from '../actions';
+import { likeCourse } from '../../actions';
+import { connect } from 'react-redux';
+import LikeButton from '../likes/LikeButton';
 
 export class CourseCard extends Component {
+
+  handleClick = () => {
+    this.props.likeCourse(this.props.course)
+  }
   render() {
     const { course } = this.props
     return (
@@ -21,11 +27,11 @@ export class CourseCard extends Component {
 
           <ButtonGroup>
             <Link key={this.props.course.id} to={`/courses/${this.props.course.id}`}>
-              <Button className="brn btn-sm">
+              <Button className="btn btn-sm">
                 More Info
               </Button>
-              
             </Link>
+            <LikeButton course={this.props.course} likeCourse={this.handleClick} />
           </ButtonGroup>
 
         </div>
@@ -35,4 +41,4 @@ export class CourseCard extends Component {
   }
 }
 
-export default CourseCard
+export default connect(null, { likeCourse })(CourseCard)
