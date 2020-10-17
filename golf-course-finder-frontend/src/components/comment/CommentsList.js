@@ -1,5 +1,6 @@
 import React from 'react'
 import CommentShow from './CommentShow';
+import { ListGroup } from 'react-bootstrap';
 
 const CommentsList = ({ comments }) => {
 
@@ -9,7 +10,9 @@ const CommentsList = ({ comments }) => {
   return (
     <div className="comments">
       <p className="bold-text">Comments:</p>
+      <ListGroup>
       {renderComments}
+      </ListGroup>
     </div>
   )
 }

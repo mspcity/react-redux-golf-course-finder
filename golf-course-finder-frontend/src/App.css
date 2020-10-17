@@ -110,3 +110,12 @@
   margin-right: 5px;
   
 }
+
+.bold-text {
+  font-weight: bold;
+}
+
+.comments-font {
+  font-style: italic;
+  font-size: 0.9em;
+}

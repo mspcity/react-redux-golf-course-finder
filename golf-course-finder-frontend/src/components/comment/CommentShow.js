@@ -4,7 +4,8 @@ const CommentShow = ({ comment }) => {
   return (
     <div className="comment"> 
         { comment.content }<br></br>
-        <p className="name"> - { comment.name}</p>
+        <span className="comments-font">
+        <p className="name"> - { comment.name}</p></span>
     </div>
   )
 }

@@ -40,7 +40,7 @@ export class CommentNew extends Component {
             <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.handleChange} />
             <br></br>
 
-            <button className="btn btn-sm" type="submit">Submit</button>
+            <button className="btn btn-sm btn-dark" type="submit">Submit</button>
 
           </form>
       </div>

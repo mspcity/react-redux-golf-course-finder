@@ -4,16 +4,22 @@ import { connect } from 'react-redux';
 import { fetchCourse } from '../../actions'
 import { deleteCourse } from '../../actions'
 import { fetchComments } from '../../actions';
+import { likeCourse } from '../../actions';
 import CommentsList from '../comment/CommentsList';
 import CommentNew from '../comment/CommentNew';
+import LikeButton from '../likes/LikeButton';
 
 export class CourseShow extends Component {
 
   componentDidMount() {
     this.props.fetchCourse(this.props.match.params.courseId);
-    this.props.fetchComments(this.props.match.params.courseId);
-    
+    this.props.fetchComments(this.props.match.params.courseId); 
   }
+
+  handleClick = () => {
+    this.props.likeCourse(this.props.course)
+  }
+
   render() {
     const { course, deleteCourse, comments, history } = this.props;
     return (
@@ -28,7 +34,9 @@ export class CourseShow extends Component {
             </div>
         </div>
 
-        <Button className="btn" onClick={() => deleteCourse(course.id, history)}>Delete</Button>
+        <Button className="btn btn-sm" onClick={() => deleteCourse(course.id, history)}>Delete</Button>
+        <LikeButton course={course} likeCourse={this.handleClick} />
+
 
         <div className="bottom-border"></div>
         
