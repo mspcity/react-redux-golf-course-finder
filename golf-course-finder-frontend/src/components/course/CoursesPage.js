@@ -27,4 +27,5 @@ export class CoursesPage extends Component {
   }
 }
 
+
 export default connect(state => ({ courses: state.courses }), { fetchCourses })(CoursesPage)

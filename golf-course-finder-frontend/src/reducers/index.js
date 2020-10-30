@@ -6,3 +6,4 @@ export default combineReducers({
   courses: coursesReducer,
   comments: commentsReducer
 })
+

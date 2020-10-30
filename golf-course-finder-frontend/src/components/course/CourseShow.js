@@ -15,29 +15,37 @@ export class CourseShow extends Component {
     this.props.fetchCourse(this.props.match.params.courseId);
     this.props.fetchComments(this.props.match.params.courseId); 
   }
-
+  
   handleClick = () => {
     this.props.likeCourse(this.props.course)
   }
 
   render() {
     const { course, deleteCourse, comments, history } = this.props;
+    let website_address = `${course.website}`
     return (
       <div className="course-show">
         <div className="container-fluid">
           <h3 className="course-header">{course.club_name}</h3>
             <div className="course-body">
-              <img src={course.image} width="100%" height="75%" alt="pic" />
+              <img src={course.image} className="img-fluid" width="100%" height="70%" alt="pic" />
               <br></br>
-              <span className="bold-text"></span>{course.number_of_holes} holes
-
+              <span className="bold-text"></span>{course.number_of_holes} holes<br></br>
+              <span className="bold-text"></span>{course.course_length} yards<br></br>
+              <span className="bold-text"></span>{course.club_type}<br></br>
+              <span className="bold-text"></span>{course.address}<br></br>
+              <span className="bold-text"></span>{course.city}, 
+              <span className="bold-text"></span>{course.state},
+              <span className="bold-text"></span>{course.zip_code}<br></br>
+              <span className="bold-text"></span>{course.phone}<br></br>
+              <a href={website_address}>{course.website}</a><br></br>
+              <br></br>
             </div>
         </div>
-
         <Button className="btn btn-sm" onClick={() => deleteCourse(course.id, history)}>Delete</Button>
         <LikeButton course={course} likeCourse={this.handleClick} />
-
-
+        <br></br>
+        <br></br>
         <div className="bottom-border"></div>
         
         <CommentsList comments={comments} />
