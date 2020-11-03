@@ -10,9 +10,13 @@ const setCourses = courses => {
 export const fetchCourses = () => {
   return dispatch => {
     dispatch({type: 'LOADING_COURSES'})
+    console.log('c')
     return fetch('http://localhost:3001/courses')
     .then(resp => resp.json())
-    .then(courses => dispatch(setCourses(courses)))
+    .then(courses => {
+      console.log('d')
+      dispatch(setCourses(courses))})
+
   }
 }
 

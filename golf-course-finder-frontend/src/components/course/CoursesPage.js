@@ -9,7 +9,9 @@ import CoursesList from './CoursesList';
 export class CoursesPage extends Component {
 
   componentDidMount() {
+    console.log('a')
     this.props.fetchCourses ()
+    console.log('b')
   }
 
   render() {

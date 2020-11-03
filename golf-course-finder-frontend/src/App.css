@@ -71,10 +71,11 @@
 /* home */
 .home {
   /* background-image: url("https://images.alphacoders.com/292/thumb-1920-292381.jpg"); */
-  background-image: url("https://thewallpaper.co//wp-content/uploads/2016/10/golf-course-hd-wallpapers-download-4k-tablet-background-wallpapers-colourful-mac-desktop-images-1080p-display-2560x1719.jpg");
+  /* background-image: url("https://thewallpaper.co//wp-content/uploads/2016/10/golf-course-hd-wallpapers-download-4k-tablet-background-wallpapers-colourful-mac-desktop-images-1080p-display-2560x1719.jpg"); */
+  background-image: url("https://www.setaswall.com/wp-content/uploads/2018/02/Golf-Wallpaper-12-2560x1719.jpg");
   background-size: cover;
   background-position: center;
-  height: 125vh;
+  height: 135vh;
 }
 
 .home-inner {

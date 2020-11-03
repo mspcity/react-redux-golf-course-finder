@@ -1,4 +1,5 @@
 export default (state=[], action) => {
+  
   switch(action.type) {
     case 'LOADING_COURSES':
       return state
