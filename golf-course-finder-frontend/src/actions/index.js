@@ -14,12 +14,25 @@ export const fetchCourses = () => {
     return fetch('http://localhost:3001/courses')
     .then(resp => resp.json())
     .then(courses => {
-      console.log('d')
-      dispatch(setCourses(courses))})
-
-  }
+      const city = courses[0]['city']
+      dispatch(setCourses(courses))
+      let arr = []
+      arr.push(city)
+      console.log(arr)
+    })
+      
+      // const findThecity = () => {
+      //   console.log(courses['city'])
+       
+      // }
+      // findThecity()
+    }
 }
 
+//  const findThecity = () => {
+//    console.log(courses['city'])
+  
+//  }
 // Course show
 
 const setCourse = course => {
